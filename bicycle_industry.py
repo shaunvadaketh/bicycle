@@ -12,7 +12,7 @@ class Bikeshop(object):
         self.margin = margin
         self.inventory = inventory
     def sellingprice(self,bike):
-        selling_price = bike.cost * 1.2
+        selling_price = bike.cost * self.margin
         return selling_price
     def profit(self,bike):
         profit = self.sellingprice(bike) - bike.cost

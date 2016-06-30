@@ -3,9 +3,7 @@ class Bicycle(object):
         self.model_name = model_name
         self.weight = weight
         self.cost = cost
-    # def __repr__(self):
-    #     return "\n{0} weighs {1} pounds and costs ${2} to produce.".format(
-    #         self.model_name, self.weight, self.cost)
+   
 class Bikeshop(object):
     def __init__(self, name, margin, inventory):
         self.name = name
@@ -17,8 +15,7 @@ class Bikeshop(object):
     def profit(self,bike):
         profit = self.sellingprice(bike) - bike.cost
         return profit
-    # def __repr__(self):
-    #     return "{0} has an inventory of {1} bikes, and their information is as follows : {2}.".format(self.name, len(self.inventory), self.inventory)
+   
 class Customer(object):
     
     def __init__(self, customername, budget):
@@ -31,5 +28,4 @@ class Customer(object):
                 potentialbikes.append(bike)
         return potentialbikes
                 
-    # def __repr__(self):
-    #     return "{0} has ${1}.".format(self.customername, self.budget)
+   

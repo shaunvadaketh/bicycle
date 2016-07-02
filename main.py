@@ -1,15 +1,27 @@
+
 import random
 from bicycle_industry import Bicycle
 from bicycle_industry import Bikeshop
 from bicycle_industry import Customer
+from bicycle_industry import Wheels
+from bicycle_industry import Frames
 if __name__ == '__main__':
+    #import pdb; pdb.set_trace()
     
-    bike_A = Bicycle("Bike A", 10, 150)
-    bike_B = Bicycle("Bike B", 20, 250)
-    bike_C = Bicycle("Bike C", 30, 400)
-    bike_D = Bicycle("Bike D", 40, 450)
-    bike_E = Bicycle("Bike E", 50, 550)
-    bike_F = Bicycle("Bike F", 55, 900)
+    first_wheel = Wheels("firstWheel", 25, 50)
+    second_wheel = Wheels("secondWheel", 30, 60)
+    third_wheel = Wheels("thirdWheel", 35, 80)
+    
+    frameOne = Frames("Aluminum", 50, 100)
+    frameTwo = Frames("Carbon", 70, 200)
+    frameThree = Frames("Steel", 100, 300)    
+    
+    bike_A = Bicycle("Bike A", 10, first_wheel, frameOne)
+    bike_B = Bicycle("Bike B", 20, first_wheel, frameTwo)
+    bike_C = Bicycle("Bike C", 30, second_wheel, frameOne)
+    bike_D = Bicycle("Bike D", 40, second_wheel, frameThree)
+    bike_E = Bicycle("Bike E", 50, third_wheel, frameOne)
+    bike_F = Bicycle("Bike F", 55, third_wheel, frameThree)
     
     
     GoodBikes_inventory = [bike_A, bike_B, bike_C, bike_D, bike_E, bike_F]
@@ -17,8 +29,8 @@ if __name__ == '__main__':
     GoodBikes = Bikeshop("GoodBikes", 1.2, GoodBikes_inventory)
     
     
-    customer1 = Customer("customerA", 200)
-    customer2 = Customer("customerB", 500)
+    customer1 = Customer("customerA", 600)
+    customer2 = Customer("customerB", 800)
     customer3 = Customer("customerC", 1000)
     
     customerlist = [customer1, customer2, customer3]
@@ -27,7 +39,7 @@ if __name__ == '__main__':
         
     print ("The inventory of {0} is as follows: ".format(GoodBikes.name))
     for bike in GoodBikes_inventory:
-        print ("{0}, which originally cost ${1} for {2} to buy. {2} is selling it for ${3}.".format(bike.model_name, bike.cost,GoodBikes.name, GoodBikes.sellingprice(bike)))
+        print ("{0}, which originally cost ${1} for {2} to buy. {2} is selling it for ${3}.".format(bike.model_name, bike.bike_cost,GoodBikes.name, GoodBikes.sellingprice(bike)))
     print("\n")
         
     for customer in customerlist:
